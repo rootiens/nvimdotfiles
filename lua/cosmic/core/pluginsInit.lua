@@ -243,6 +243,9 @@ return packer.startup(function()
     disable = vim.tbl_contains(user_config.disable_builtin_plugins, 'colorizer'),
   })
 
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+
+
   if user_config.add_plugins and not vim.tbl_isempty(user_config.add_plugins) then
     for _, plugin in pairs(user_config.add_plugins) do
       use(plugin)
